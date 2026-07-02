@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+#include <string> 
 
 int randchoose(){
     std::random_device rd;
@@ -20,10 +21,15 @@ int choose() {
 }
 
 int main () {
+    std::string option[3] = {"Rock", "Paper", "Scissor"};
     int A = choose();
     int B = randchoose();
-    std::cout << "You chose: " << A << ", ";
-    std::cout <<"I chose: " << B << "\n";
+    
+    std::string Tu = option[A-1];
+    std::string Ego = option[B-1];
+    
+    std::cout << "You chose: " << Tu<< ", ";
+    std::cout <<"I chose: " << Ego << "\n";
     
     if ( A == B ) {
         std::cout << "Game tied!";
